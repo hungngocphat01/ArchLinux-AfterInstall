@@ -40,6 +40,10 @@ set noshowmode
 EOF
 
 echo ============= INSTALL YAY PACKAGES =============
+sudo chown -R $LOGNAME ~/.gnupg/
+chmod 600 ~/.gnupg/*
+chmod 700 ~/.gnupg
+
 # Install neccessary yay packages
 yay_pkgs=(
 	chrome-gnome-shell-git
