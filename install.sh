@@ -71,4 +71,3 @@ yay --nointeract -S $(echo $yay_pkgs)
 # Setup vmware
 sudo modprobe -a vmw_vmci vmmon
 sudo systemctl enable --now vmware.service vmware-networks.service
-sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn 'ZF3R0-FHED2-M80TY-8QYGC-NPKYF'
