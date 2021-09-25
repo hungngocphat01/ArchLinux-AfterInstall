@@ -13,7 +13,7 @@ pacman_pkgs=(
 	git
 )
 
-sudo pacman --noconfirm -Sy $(echo $pacman_pkgs)
+sudo pacman --noconfirm -Sy ${pacman_pkgs[@]}
 
 # Change shell 
 chsh -s $(which zsh) $LOGNAME
@@ -58,7 +58,7 @@ yay_pkgs=(
 	visual-studio-code-bin
 	vmware-workstation
 )
-yay --noconfirm -S $(echo $yay_pkgs)
+yay --noconfirm -S ${yay_pkgs[@]}
 
 # Setup vmware
 sudo modprobe -a vmw_vmci vmmon
