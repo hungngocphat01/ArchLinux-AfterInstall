@@ -11,6 +11,7 @@ pacman_pkgs=(
 	vim
 	pandoc
 	git
+	docker
 )
 
 sudo pacman --noconfirm -Sy ${pacman_pkgs[@]}
@@ -81,5 +82,12 @@ alias rm='rm -i'
 alias open='xdg-open'
 export LANG=en_US.UTF-8
 EOF
+
+# Configure docker 
+echo ============= DOCKER =============
+groups
+sudo systemctl enable --now docker
+sudo usermod -aG docker $LOGNAME
+newgrp docker
 
 set -x
