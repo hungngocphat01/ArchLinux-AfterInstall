@@ -44,6 +44,8 @@ sudo chown -R $LOGNAME ~/.gnupg/
 chmod 600 ~/.gnupg/*
 chmod 700 ~/.gnupg
 
+echo keyserver hkp://keyserver.ubuntu.com | sudo tee /etc/pacman.d/gnupg/gpg.conf
+
 # Install neccessary yay packages
 yay_pkgs=(
 	chrome-gnome-shell-git
@@ -70,7 +72,7 @@ sudo systemctl enable --now vmware.service vmware-networks.service
 echo ============= ZSH =============
 # Install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sed -i "s/ZSH_THEME=.*/ZSH_THEME='af-magic'/g"
+sed -i "s/ZSH_THEME=.*/ZSH_THEME='af-magic'/g" ~/.zshrc
 
 # Configure aliases
 cat >> ~/.zshrc <<EOF
