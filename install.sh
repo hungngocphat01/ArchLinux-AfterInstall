@@ -11,7 +11,7 @@ pacman_pkgs=(
 	git
 )
 
-sudo pacman --nointeract -Sy $(echo $pacman_pkgs)
+sudo pacman --noconfirm -Sy $(echo $pacman_pkgs)
 
 # Change shell 
 chsh -s $(which zsh) hiraki
