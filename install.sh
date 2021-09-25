@@ -62,6 +62,7 @@ yay_pkgs=(
 	spotify
 	visual-studio-code-bin
 	vmware-workstation
+	ibus-mozc-ut2
 )
 yay --noconfirm -S ${yay_pkgs[@]}
 
@@ -90,4 +91,8 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker $LOGNAME
 newgrp docker
 
+echo ============= UPDATE SYSTEM =============
+sudo pacman --noconfirm -Syu
+
+echo ============= YOU SHOULD REBOOT NOW =============
 set -x
