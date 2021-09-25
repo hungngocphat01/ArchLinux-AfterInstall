@@ -4,7 +4,7 @@ set +x
 echo WARNING: YAY must be installed prior to executing this file!
 
 echo ============= DISABLE SUDO TIMEOUT =============
-echo 'Defaults:USER timestamp_timeout=-1' | sudo tee -a /etc/sudoers
+echo 'Defaults passwd_timeout=0' | sudo tee -a /etc/sudoers
 
 
 # Install all pacman packages
