@@ -57,7 +57,6 @@ yay_pkgs=(
 	gnome-shell-extension-dash-to-dock-gnome40-git
 	heroku-cli-bin
 	ibus-bamboo
-	kooha
 	microsoft-edge-dev-bin
 	miniconda3
 	obsidian-appimage
