@@ -22,9 +22,7 @@ git config --global user.email hungngocphat01@gmail.com
 git config credential.helper store
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/ZSH_THEME=.*/ZSH_THEME='af-magic'/g"
-
 
 # Configure aliases
 cat >> ~/.zshrc <<EOF
@@ -72,3 +70,7 @@ yay --nointeract -S $(echo $yay_pkgs)
 # Setup vmware
 sudo modprobe -a vmw_vmci vmmon
 sudo systemctl enable --now vmware.service vmware-networks.service
+
+# Install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
