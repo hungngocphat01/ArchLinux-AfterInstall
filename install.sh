@@ -4,7 +4,7 @@ set +x
 echo WARNING: YAY must be installed prior to executing this file!
 
 echo ============= DISABLE SUDO TIMEOUT =============
-echo 'Defaults:USER timestamp_timeout=-1' | sudo tee /etc/sudoers
+echo 'Defaults:USER timestamp_timeout=-1' | sudo tee -a /etc/sudoers
 
 
 # Install all pacman packages
@@ -49,7 +49,7 @@ sudo chown -R $LOGNAME ~/.gnupg/
 chmod 600 ~/.gnupg/*
 chmod 700 ~/.gnupg
 
-echo keyserver hkp://keyserver.ubuntu.com | sudo tee /etc/pacman.d/gnupg/gpg.conf
+echo keyserver hkp://keyserver.ubuntu.com | sudo tee -a /etc/pacman.d/gnupg/gpg.conf
 
 # Install neccessary yay packages
 yay_pkgs=(
