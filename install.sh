@@ -9,8 +9,9 @@ pacman_pkgs=(
 	vim
 	pandoc
 	git
-	
 )
+
+sudo pacman --nointeract -Sy $(echo $pacman_pkgs)
 
 # Change shell 
 chsh -s $(which zsh) hiraki
