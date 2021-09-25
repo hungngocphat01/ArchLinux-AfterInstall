@@ -24,6 +24,15 @@ git config credential.helper store
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/ZSH_THEME=.*/ZSH_THEME='af-magic'/g"
 
+
+# Configure aliases
+cat >> ~/.zshrc <<EOF
+export TERM=xterm-256color
+alias rm='rm -i'
+alias open='xdg-open'
+export LANG=en_US.UTF-8
+EOF
+
 # Configure vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -39,14 +48,6 @@ if !has('gui_running')
   set t_Co=256
 endif
 set noshowmode
-EOF
-
-# Configure aliases
-cat >> ~/.zshrc <<EOF
-export TERM=xterm-256color
-alias rm='rm -i'
-alias open='xdg-open'
-export LANG=en_US.UTF-8
 EOF
 
 # Install neccessary yay packages
