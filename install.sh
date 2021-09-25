@@ -15,9 +15,6 @@ pacman_pkgs=(
 
 sudo pacman --noconfirm -Sy ${pacman_pkgs[@]}
 
-# Change shell 
-chsh -s $(which zsh) $LOGNAME
-
 echo ============= CONFIGURE GIT =============
 # Configure git 
 git config --global user.name hungngocphat01
@@ -25,7 +22,7 @@ git config --global user.email hungngocphat01@gmail.com
 git config credential.helper store
 
 # Configure vim
-echo ============= CONFIGURE ZSH ALIAS =============
+echo ============= CONFIGURE VIM =============
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat > ~/.vimrc <<EOF
@@ -42,6 +39,7 @@ endif
 set noshowmode
 EOF
 
+echo ============= INSTALL YAY PACKAGES =============
 # Install neccessary yay packages
 yay_pkgs=(
 	chrome-gnome-shell-git
@@ -60,15 +58,16 @@ yay_pkgs=(
 )
 yay --noconfirm -S ${yay_pkgs[@]}
 
+echo ============= VMWARE =============
 # Setup vmware
 sudo modprobe -a vmw_vmci vmmon
 sudo systemctl enable --now vmware.service vmware-networks.service
 
+echo ============= ZSH =============
 # Install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sed -i "s/ZSH_THEME=.*/ZSH_THEME='af-magic'/g"
 
-echo ============= CONFIGURE ZSH ALIAS =============
 # Configure aliases
 cat >> ~/.zshrc <<EOF
 export TERM=xterm-256color
