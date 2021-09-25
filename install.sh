@@ -58,7 +58,7 @@ yay_pkgs=(
 	visual-studio-code-bin
 	vmware-workstation
 )
-yay --nointeract -S $(echo $yay_pkgs)
+yay --noconfirm -S $(echo $yay_pkgs)
 
 # Setup vmware
 sudo modprobe -a vmw_vmci vmmon
