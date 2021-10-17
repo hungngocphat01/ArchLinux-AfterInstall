@@ -85,6 +85,19 @@ export TERM=xterm-256color
 alias rm='rm -i'
 alias open='xdg-open'
 export LANG=en_US.UTF-8
+alias obs-wayland="QT_QPA_PLATFORM=wayland obs"
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+alias jl="jupyter lab"
+
+function cda() {
+	if [[ $1 == 'a' ]] then 
+		conda activate $2
+	elif [[ $1 == 'd' ]] then 
+		conda deactivate $2
+	else 
+		conda $@
+	fi
+}
 EOF
 
 # Configure docker 
